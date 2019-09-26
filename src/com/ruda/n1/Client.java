@@ -7,7 +7,6 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
-//import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.Scanner;
 
@@ -40,7 +39,7 @@ public class Client {
 				System.out.println("서버로 전송 완료");
 				if(str.toUpperCase().equals("END")) {
 					break;
-					}
+				}
 
 				System.out.println("서버 접속 받을 준비중");
 				is = sc.getInputStream();
@@ -53,33 +52,21 @@ public class Client {
 					break;
 				}
 			}
-			/**********
-			ss = new ServerSocket(8281);
-			System.out.println("서버 접속 받을 준비중");
-			sc1 = ss.accept();
-			is = sc1.getInputStream();
-			ir = new InputStreamReader(is);
-			br = new BufferedReader(ir);
-			str = br.readLine();
-			System.out.println(str);
-			 ***********/
+			
 
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} finally {
 			try {
 				br.close();
 				ir.close();
 				is.close();
-				//sc1.close();
-				//ss.close();
+
 				bw.close();
 				ow.close();
 				os.close();
 				sc.close();
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}

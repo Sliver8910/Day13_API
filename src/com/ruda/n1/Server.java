@@ -18,7 +18,6 @@ public class Server {
 		//Socket
 		ServerSocket ss = null;
 		Socket sc = null;
-		//Socket sc1 = null;
 		InputStream is = null;
 		InputStreamReader ir = null;
 		BufferedReader br = null;
@@ -55,35 +54,19 @@ public class Server {
 				}
 			}
 
-
-			/**********
-			sc1 = new Socket("211.238.142.21", 8281);
-			System.out.println("서버로 전송할 메세지 입력");
-			str = ssc.next();
-			os = sc1.getOutputStream();
-			ow = new OutputStreamWriter(os);
-			bw = new BufferedWriter(ow);
-			bw.write(str+"\r\n");
-			bw.flush();
-			System.out.println("클라이언트로 전송 완료");
-			 *************/
-
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}finally {
 			try {
 				bw.close();
 				ow.close();
 				os.close();
-				//sc1.close();
 				br.close();
 				ir.close();
 				is.close();
 				sc.close();
 				ss.close();
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
