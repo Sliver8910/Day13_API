@@ -27,7 +27,12 @@ public class Client3 {
 			network.send(sc, ym);
 			
 			String str =network.receive(sc);
-			System.out.println(str);
+			if(str.equals("0")) {
+				System.out.println("로그인 실패");
+			}else {
+				System.out.println("로그인 성공");
+			}
+			
 			
 			
 		} catch (Exception e) {

@@ -25,7 +25,13 @@ public class Server3 {
 			String yid = sm[0];
 			String ypw = sm[1];
 			ArrayList<Member> members = memberService.init();
-			memberService.memerLogin(yid, ypw, members, sc);
+			Member m = memberService.memerLogin(yid, ypw, members);
+			String msg = "0";
+			if(m != null) {
+				msg = "1"; //로그인 성공
+			}
+			network.send(sc, msg);
+		
 			
 			
 		} catch (Exception e) {

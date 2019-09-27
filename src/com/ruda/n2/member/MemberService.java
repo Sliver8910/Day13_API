@@ -7,9 +7,6 @@ import java.net.Socket;
 import java.util.ArrayList;
 import java.util.StringTokenizer;
 
-import com.ruda.n2.Server3;
-import com.ruda.n2.network.Network;
-
 public class MemberService {
 
 	public ArrayList<Member> init() throws Exception {
@@ -35,24 +32,22 @@ public class MemberService {
 		return members;
 
 	}
-	public void memerLogin(String yid, String ypw, ArrayList<Member> members, Socket sc) throws Exception {
+	public Member memerLogin(String yid, String ypw, ArrayList<Member> members) throws Exception {
 		//id와, pw를 매개변수로 받아서 로그인 유무를 검증
-		Network network = new Network();
-		Member member = new Member();
-		String str = "로그인 성공";
-		String str2 = "로그인 실패";
+		//로그인 실패 = null
+		Member m = new Member();
 		for(int i=0;i<members.size();i++) {
 			if(members.get(i).getId().equals(yid) && members.get(i).getPw().equals(ypw)) {
-				member = members.get(i);
+				m = members.get(i);
 				break;
-			}else {
+			}else { 
 			}
-			if(member != null) {
-				network.send(sc, str);
+			if(m != null) {
+				
 			}else {
-				network.send(sc, str2);
+				m=null;
 			}
 		}
-
+		return m;
 	}
 }

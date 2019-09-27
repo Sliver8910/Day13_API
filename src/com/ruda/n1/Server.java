@@ -66,6 +66,7 @@ public class Server {
 				is.close();
 				sc.close();
 				ss.close();
+				ssc.close();
 			} catch (IOException e) {
 				e.printStackTrace();
 			}

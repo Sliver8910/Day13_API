@@ -58,6 +58,7 @@ public class Client {
 			e.printStackTrace();
 		} finally {
 			try {
+				
 				br.close();
 				ir.close();
 				is.close();
@@ -66,6 +67,7 @@ public class Client {
 				ow.close();
 				os.close();
 				sc.close();
+				ssc.close();
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
